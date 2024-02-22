@@ -62,11 +62,14 @@
 
                             <!-- Input aggiunta item -->
                             <li class="list-group-item d-flex align-items-center">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Aggiungi Task" ref="input">
-                                    <button class="btn btn-outline-secondary" type="button">
-                                        <i class="fa-solid fa-plus"></i>
-                                    </button>
+                                <div class="input-group d-block">
+                                    <form @submit.prevent="addTask" class="d-flex gap-2">
+                                        <input type="text" class="form-control" placeholder="Aggiungi Task" ref="input"
+                                            v-model.trim="newTask">
+                                        <button class="btn btn-outline-secondary" type="submit">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </button>
+                                    </form>
                                 </div>
                             </li>
                         </ul>
