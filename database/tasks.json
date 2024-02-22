@@ -18,5 +18,15 @@
         "id": 4,
         "text": "Javascript",
         "done": false
+    },
+    {
+        "id": 1708620905,
+        "text": "Laravel",
+        "done": false
+    },
+    {
+        "id": 1708620962,
+        "text": "SQL",
+        "done": false
     }
 ]

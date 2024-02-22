@@ -19,9 +19,17 @@ if ($new_task) {
         "done" => false
     );
 
-    $tasks[] = $new_task;
+    if (!in_array($new_task, $tasks)) {
+        $tasks[] = $new_task;
+    } else {
+        echo json_encode('{"error": "Si è verificato un errore"}');
+    }
+
 
     $tasks = json_encode($tasks);
+
+
+    file_put_contents($source_path, $tasks);
 }
 
 
