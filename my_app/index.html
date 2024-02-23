@@ -53,7 +53,9 @@
                                 <div class="form-check">
                                     <label role="button" class="form-check-label">
                                         <input class="form-check-input" type="checkbox">
-                                        {{ task.text }}
+                                        <span :class="{'text-decoration-line-through': task.done}">
+                                            {{ task.text }}
+                                        </span>
                                     </label>
                                 </div>
 
