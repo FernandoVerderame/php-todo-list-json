@@ -14,18 +14,18 @@ $json_data = file_get_contents($source_path);
 $tasks = $json_data;
 
 // New task check
-$new_task = $_POST['task'] ?? '';
+$task_text = $_POST['task'] ?? '';
 
-if ($new_task) {
+if ($task_text) {
 
     $tasks = json_decode($tasks, true);
 
     // New task creation
-    $new_task = array(
-        "id" => time(),
-        "text" => $_POST['task'],
+    $new_task = [
+        "id" => uniqid(),
+        "text" => $task_text,
         "done" => false
-    );
+    ];
 
     // New task validation
     if (!in_array($new_task, $tasks)) {
